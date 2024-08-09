@@ -17,11 +17,11 @@ class RedisManager {
     private static KEY_EXPIRATION = 3600;
     private static REDIS_CHANNEL = "manim_code_notifications";
 
-    constructor(redisUri: string) {
+    constructor(redisUri: string, redisHost: string, redisPort: number ,redisPass: string) {
         this.redis = new Redis(redisUri, {
-            host: 'aspan-name.redis.cache.windows.net',
-            port: 6380,
-            password: 'BsCcRVG0LPkDk6VyEbK4eVC60mGdGrJJUAzCaBxZrjA=',
+            host: redisHost,
+            port: redisPort,
+            password: redisPass,
             tls: {},  // SSL enabled
             connectTimeout: 20000, // Increase timeout to 20 seconds
             retryStrategy: (times: number) => {
@@ -153,8 +153,8 @@ export default class ManimService {
     //private gitHubLoader: GitHubLoader;
     private manimCodeGenerator: ManimCodeGenerator;
 
-    constructor(redisUri:string, repos: string[], authToken: string, voyageAPI: string, anthropicApiKey:string) {
-        this.redisManager = new RedisManager(redisUri);
+    constructor(redisUri:string, repos: string[], authToken: string, voyageAPI: string, anthropicApiKey:string, redisHost: string, redisPort: number ,redisPass: string) {
+        this.redisManager = new RedisManager(redisUri, redisHost, redisPort, redisPass);
         //this.gitHubLoader = new GitHubLoader(repos, authToken, voyageAPI);
         this.manimCodeGenerator = new ManimCodeGenerator(anthropicApiKey);
     }

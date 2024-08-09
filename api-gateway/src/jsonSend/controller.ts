@@ -5,9 +5,13 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const REDIS_URI = process.env.REDIS_URI || "";
+const REDIS_HOST = process.env.REDIS_HOST || "";
+const REDIS_PORT = Number(process.env.REDIS_PORT)|| 0;
+const REDIS_PASSWORD = process.env.REDIS_PASSWORD || "";
 const GITHUB_API = process.env.GITHUB_API || "";
 const VOYAGE_API = process.env.VOYAGE_API_KEY || "";
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+
 
 const repos = [
   "https://github.com/Aspandiyar933/videos",
@@ -23,7 +27,7 @@ const repos = [
   "https://github.com/Aspandiyar933/manim"
 ];
 
-const manimService = new ManimService(REDIS_URI, repos, GITHUB_API, VOYAGE_API, ANTHROPIC_API_KEY);
+const manimService = new ManimService(REDIS_URI, repos, GITHUB_API, VOYAGE_API, ANTHROPIC_API_KEY, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD);
 
 export class ManimController {
     async generateManimCode(req: Request, res: Response, next: NextFunction) {
