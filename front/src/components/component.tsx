@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export function Component() {
   const [inputText, setInputText] = useState('');
-  const [selectedVideo, setSelectedVideo] = useState('');
+  const [, setSelectedVideo] = useState('');
   const [selectedVideoG, setSelectedVideoG] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
-  const [generationProgress, setGenerationProgress] = useState(0);
+  const [, setGenerationProgress] = useState(0);
 
   const videos = [
     'PythagoreanTheorem.mp4',
@@ -20,8 +20,6 @@ export function Component() {
     'AreaOfShapes.mp4',
     'FractalTree.mp4'
   ];
-
-  const audio = [''];
 
   const handleGenerate = () => {
     setIsGenerating(true);
