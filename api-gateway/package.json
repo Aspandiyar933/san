@@ -1,0 +1,40 @@
+{
+  "name": "sanzhar-poop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc --build",
+    "start": "node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.25.0",
+    "@langchain/anthropic": "^0.2.13",
+    "@langchain/community": "^0.2.24",
+    "@langchain/langgraph": "^0.0.33",
+    "@types/ioredis": "^4.28.10",
+    "@types/uuid": "^10.0.0",
+    "chromadb": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ignore": "^5.3.1",
+    "ioredis": "^5.4.1",
+    "langchain": "^0.2.13",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.2",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
